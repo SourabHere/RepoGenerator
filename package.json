@@ -27,6 +27,7 @@
     "@nestjs/platform-express": "^9.0.0",
     "@octokit/auth-oauth-app": "^5.0.2",
     "@octokit/rest": "^19.0.4",
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.8",
     "hbs": "^4.2.0",
     "js-base64": "^3.7.2",

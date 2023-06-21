@@ -2,10 +2,12 @@ import { Injectable } from '@nestjs/common';
 const { createOAuthAppAuth } = require("@octokit/auth-oauth-app");
 const { Octokit } = require("@octokit/rest");
 const { Base64 } = require("js-base64");
+import { config } from 'dotenv';
 
-let CLIENT_ID = "ac2f9af0f327d3e097e0";
-let CLIENT_SECRET = "75b67adb7ea5fd542ceed3c44a76b0f9bd988568";
+config();
 
+let CLIENT_ID = process.env.CLIENT_ID;
+let CLIENT_SECRET = process.env.CLIENT_SECRET;
 
 @Injectable()
 export class AppService {
