@@ -16,13 +16,15 @@ export class AppController {
   async start_code(@Query() query: { code: string,path:string }){
     const code = query.code;
     // console.log(code);
-      let data=await this.appService.create_repo(code).then(data=>{
-        return "Repository Created Succesfully!"
-      })
-      .catch(error=>{
-        return "Error in Creating Repository, Maybe a repository exists with same name as 'new_repo'"
-      })
-      return data;
+    try{
+      await this.appService.create_repo(code);
+      return "Repository Created Succesfully!"
+
+    }
+    catch(err){
+      console.log(err);
+      return err;
+    }
   }
 
 }
